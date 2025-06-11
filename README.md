@@ -1,54 +1,22 @@
-# React + TypeScript + Vite
+# Memorable Bitcoin Wallet
+A tool that breaks every rule and aspect of safe private key creation, bringing it to 2 words and 1 date.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+### Support
+- Bitcoin
+- Litecoin
+- Bitcoin Cash
+- Dogecoin
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+### How does it work
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+> Argon2 my beloved
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+There are about 4,800 adjectives and 80,000 nouns in English vocabulary. Combine that with a date range from year 0 to year 9999 (3,652,424 days). And what you get is 1,402,530,816,000,000 possible combinations and even more if a person choses not to use standard english vocabulary. And here enter the Argon2. With Argon2's parameters, we can define algorithm's time cost, which stretches calculation time to 15+ seconds on modern CPUs. So to go through all standard combinations, you would have to spend 21,037,962,240,000,000 seconds or 44,473,960 years calculating to generate all the wallets.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+Learning React and Bitcoin Standards with this project
