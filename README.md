@@ -3,7 +3,7 @@ A tool that breaks every rule and aspect of safe private key creation, bringing 
 
 ---
 
-### Support
+## Support
 - Bitcoin
 - Litecoin
 - Bitcoin Cash
@@ -11,7 +11,7 @@ A tool that breaks every rule and aspect of safe private key creation, bringing 
 
 ---
 
-### How does it work
+## How does it work
 
 > Argon2 my beloved
 
