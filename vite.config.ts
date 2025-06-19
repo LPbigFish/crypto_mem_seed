@@ -8,5 +8,6 @@ import { nodePolyfills } from 'vite-plugin-node-polyfills'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss(), wasm(), topLevelAwait(), nodePolyfills()],
-  assetsInclude: ['**/*.wasm']
+  assetsInclude: ['**/*.wasm'],
+  base: "/crypto_mem_seed"
 })
