@@ -19,10 +19,11 @@ There's no check for vocabulary, so the two words can be any word type. But the 
 
 And here enters Argon2. Argon2 was built with configurable parameters, so we can define the algorithm's time cost, which stretches calculation time to roughly **15+ seconds per hash** on modern CPUs. So to go through all standard combinations, you would have to spend **21,037,962,240,000,000 seconds** or **44,473,960 years** to generate all the standard wallet combinations.
 
+---
+## Warning
 
+No information is being leaked or stored anywhere. The entire system is fully client-side with source available here and in your browser. But still, generating wallets is a big security risk and involves a possibility of private key compromise. Use at your own risk.
 
-No information is being leaked or stored anywhere. The entire system is fully client-side with source available here and in your browser.
-
-
+---
 
 Learning **React** and **Bitcoin Standards** with this project
