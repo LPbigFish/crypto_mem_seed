@@ -29703,7 +29703,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   }, cR = {
     messagePrefix: `Bitcoin Cash Signed Message:
 `,
-    bech32: "bitcoincash",
+    bech32: "",
     bip32: {
       public: 76067358,
       private: 76066276
