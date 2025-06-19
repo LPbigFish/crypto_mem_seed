@@ -29,7 +29,7 @@ const LITECOIN: Network = {
 const BITCOINCASH: Network = {
   messagePrefix: "\x18Bitcoin Cash Signed Message:\n",
   // CashAddr uses its own human-readable part (HRP):
-  bech32: "bitcoincash",
+  bech32: "",
   // Extended-key prefixes are identical to Bitcoin’s xpub/xprv
   bip32: {
     public: 0x0488b21e, // 76067358 dec
