@@ -3,7 +3,7 @@ A tool that breaks every rule and aspect of safe private key creation, bringing 
 
 
 
-## Support
+## Supported coins
 - Bitcoin
 - Litecoin
 - Bitcoin Cash
