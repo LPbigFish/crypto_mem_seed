@@ -14,7 +14,7 @@ function WalletModal({ wallet, onClose }: WalletModalProps) {
 
   return (
     <>
-      <dialog ref={modal} onClose={onClose} className="modal bg-base-100">
+      <dialog ref={modal} onClose={onClose} className="modal w-screen bg-base-100">
         <div className="modal-box p-8 max-w-xl">
           <h3 className="flex font-bold text-xl items-center gap-3"><FontAwesomeIcon icon={faSquareCheck} className="text-green-600 text-3xl" /> Your Wallet Was Generated:</h3>
           <div className="flex flex-row">
