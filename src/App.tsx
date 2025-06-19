@@ -1,10 +1,13 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useContext, useEffect, useMemo, useRef, useState } from "react";
 import { generate_wallet } from ".";
-import GeneratorForm from "./GeneratorForm";
-import WalletModal from "./WalletModal";
+import GeneratorForm from "./Components/GeneratorForm";
+import WalletModal from "./Components/WalletModal";
+import { NetworkCtx } from "./utils/Contexts";
 
 function App() {
   const workerRef = useRef<Worker>(null);
+
+  const network = useContext(NetworkCtx);
 
   const [busy, setBusy] = useState<boolean>(false);
 
@@ -15,9 +18,9 @@ function App() {
   const [show, setShow] = useState<boolean>(false);
 
   const wallet = useMemo(() => {
-    if (!hash) return undefined;
-    return generate_wallet(hash);
-  }, [hash]);
+    if (!hash || !network) return undefined;
+    return generate_wallet(hash, network.value);
+  }, [hash, network]);
 
   useEffect(() => {
     workerRef.current = new Worker(
@@ -55,6 +58,7 @@ function App() {
           doHash={doHash}
           form={form}
           setForm={setForm}
+          network={network}
         />
         {show ? (
           <WalletModal wallet={wallet} onClose={() => setShow(false)} />

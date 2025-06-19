@@ -1,4 +1,4 @@
-import { argon2_hash } from ".";
+import { argon2_hash } from "./argon2";
 
 self.onmessage = async (e: MessageEvent<[string, string, Date]>) => {
     const [adjective, noun, date] = e.data;
