@@ -21,8 +21,8 @@ And here enters Argon2. Argon2 was built with configurable parameters, so we can
 
 ## Warning
 
-No information is being leaked or stored anywhere. The entire system is fully client-side with source available here and in your browser. But still, generating wallets is a big security risk and involves a possibility of private key compromise. Use at your own risk.
+No information is being leaked or stored anywhere. The entire system is fully client-side with source available on github and in your browser. But still, generating wallets using this tool is a big security risk and involves a possibility of private key being compromised by a weak choice of parameters. Use at your own risk.
 
 ---
 
-Learning **React** and **Bitcoin Standards** with this project
+Learning **React**, **Bitcoin Standards** and **Cryptography** with this project
