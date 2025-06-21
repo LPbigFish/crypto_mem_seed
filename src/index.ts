@@ -4,7 +4,7 @@ import * as ecc from "tiny-secp256k1";
 import { payments } from "bitcoinjs-lib";
 import { sha512 } from "sha.js";
 import type { Network } from "./types/network_types";
-import { MONERO_WORDLIST } from "./utils/moneroWords";
+import { MONERO_WORDLIST } from "./types/moneroWords";
 import * as CRC32 from "crc-32";
 
 const bip32 = BIP32Factory(ecc);

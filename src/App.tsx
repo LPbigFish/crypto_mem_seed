@@ -61,7 +61,6 @@ function App() {
           doHash={doHash}
           form={form}
           setForm={setForm}
-          network={network}
         />
         {show ? (
           <WalletModal wallet={wallet} onClose={() => setShow(false)} />

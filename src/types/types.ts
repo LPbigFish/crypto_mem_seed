@@ -14,8 +14,6 @@ export interface GeneratorFormProps {
   form: FormState;
 
   setForm: React.Dispatch<React.SetStateAction<FormState>>;
-
-  network: NETWORK_OPTION;
 }
 
 export interface WalletModalProps {

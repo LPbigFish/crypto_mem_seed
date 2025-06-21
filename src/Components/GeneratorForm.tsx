@@ -1,9 +1,13 @@
 import { DayPicker } from "react-day-picker";
 import type { GeneratorFormProps } from "../types/types";
+import { useContext } from "react";
+import { NetworkCtx } from "../utils/Contexts";
 
 const regex = /^[A-Za-z]+(?:-[A-Za-z]+)? [A-Za-z]+(?:-[A-Za-z]+)?$/;
 
-function GeneratorForm({ busy, doHash, form, setForm, network }: GeneratorFormProps) {
+function GeneratorForm({ busy, doHash, form, setForm }: GeneratorFormProps) {
+  const network = useContext(NetworkCtx);
+
   const isValid = regex.test(form.passphrase);
 
   return (
