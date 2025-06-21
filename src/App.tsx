@@ -3,6 +3,7 @@ import { generate_wallet } from ".";
 import GeneratorForm from "./Components/GeneratorForm";
 import WalletModal from "./Components/WalletModal";
 import { NetworkCtx } from "./utils/Contexts";
+import { NETWORKS } from "./types/network_types";
 
 function App() {
   const workerRef = useRef<Worker>(null);
@@ -17,6 +18,7 @@ function App() {
 
   const [show, setShow] = useState<boolean>(false);
 
+  
   const wallet = useMemo(() => {
     if (!hash || !network) return undefined;
     return generate_wallet(hash, network.value);
@@ -47,6 +49,7 @@ function App() {
       adjective,
       noun,
       form.date || new Date(2004, 11, 17, 0, 0, 0, 0),
+      network.value === NETWORKS.xmr ? 256 : 128
     ]);
   };
 

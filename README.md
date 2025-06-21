@@ -2,13 +2,12 @@
 A tool that breaks every rule and aspect of safe private key creation, bringing it to two words and one date.
 
 
-
 ## Supported coins
-- Bitcoin
-- Litecoin
-- Bitcoin Cash
-- Dogecoin
-
+- Bitcoin (BTC)
+- Litecoin (LTC)
+- Bitcoin Cash (BCH)
+- Dogecoin (DOGE)
+- Monero (XMR)
 
 
 ## How does it work
@@ -18,6 +17,7 @@ There's no check for vocabulary, so the two words can be any word type. But the 
 > Argon2, my beloved
 
 And here enters Argon2. Argon2 was built with configurable parameters, so we can define the algorithm's time cost, which stretches calculation time to roughly **15+ seconds per hash** on modern CPUs. So to go through all standard combinations, you would have to spend **21,037,962,240,000,000 seconds** or **44,473,960 years** to generate all the standard wallet combinations.
+
 
 ## Warning
 

@@ -3,6 +3,7 @@ import BitcoinLogo from "../assets/bitcoin-btc-logo.svg";
 import LitecoinLogo from "../assets/litecoin-ltc-logo.svg";
 import BitcoinCashLogo from "../assets/bitcoin-cash-bch-logo.svg";
 import DogeCoinLogo from "../assets/dogecoin-doge-logo-alternative.svg";
+import MoneroLogo from "../assets/monero-xmr-logo.svg";
 
 export interface Network extends networks.Network {
   coin_type: number;
@@ -55,11 +56,26 @@ const DOGECOIN: Network = {
   coin_type: 3,
 };
 
+const MONERO: Network = {
+  messagePrefix: "\x19Dogecoin Signed Message:\n",
+  // Dogecoin hasn’t rolled out BIP-173 (bech32) on mainnet yet:
+  bech32: "",
+  bip32: {
+    public: 0, // “dpub…”
+    private: 0, // “dprv…”
+  },
+  pubKeyHash: 0, // P2PKH   →   D-addresses
+  scriptHash: 0, // P2SH    →   9- / A-addresses
+  wif: 0, // WIF     →   6-prefix
+  coin_type: -1,
+};
+
 export const NETWORKS = {
   btc: BITCOIN,
   ltc: LITECOIN,
   bch: BITCOINCASH,
   doge: DOGECOIN,
+  xmr: MONERO,
 };
 
 export interface NETWORK_OPTION {
@@ -79,4 +95,5 @@ export const OPTIONS: NETWORK_OPTION[] = [
     Icon: BitcoinCashLogo,
   },
   { value: NETWORKS.doge, vt: "doge", label: "Dogecoin", Icon: DogeCoinLogo },
+  { value: NETWORKS.xmr, vt: "xmr", label: "Monero", Icon: MoneroLogo }
 ];

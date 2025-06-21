@@ -1,7 +1,7 @@
 import argon2 from "argon2-browser/dist/argon2-bundled.min.js";
 
 
-export async function argon2_hash(adjective: string, noun: string, date: Date) {
+export async function argon2_hash(adjective: string, noun: string, date: Date, length: number = 128) {
   const input =
     date.getFullYear() + adjective + date.getDay() + noun + date.getMonth();
 
@@ -11,7 +11,7 @@ export async function argon2_hash(adjective: string, noun: string, date: Date) {
     parallelism: 2,
     time: 1 << 11,
     mem: 2048,
-    hashLen: 16,
+    hashLen: length / 8,
     type: argon2.ArgonType.Argon2id,
   });
 }
