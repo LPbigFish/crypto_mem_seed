@@ -1,40 +1,6 @@
 import { useState } from "react";
 import type { CustomDatePickerProps } from "../types/types";
-
-const MONTHS = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
-
-const calculateDaysInMonth = (month: number, year: number): number => {
-  return new Date(year, month + 1, 0).getDate();
-};
-
-const safeInt = (str: string, fallback = 0) => {
-  const n = parseInt(str, 10);
-  return Number.isNaN(n) ? fallback : n;
-};
-
-const isValidDate = (year: number, month: number, day: number): boolean => {
-  return !(
-    year < 0 ||
-    year > 9999 ||
-    month < 0 ||
-    month > 11 ||
-    day < 1 ||
-    day > calculateDaysInMonth(year, month)
-  );
-};
+import { calculateDaysInMonth, MONTHS, safeInt } from "..";
 
 export default function DatePicker({
   disabled,
@@ -45,8 +11,6 @@ export default function DatePicker({
   const [month, setMonth] = useState<number>(date.getUTCMonth());
   const [year, setYear] = useState<number>(date.getUTCFullYear());
 
-  const isInvalid = !isValidDate(year, month, day);
-
   const handle = (el: HTMLInputElement | HTMLSelectElement) => {
     const { name, value } = el;
 
@@ -56,9 +20,12 @@ export default function DatePicker({
 
     if (name === "day") nextDay = safeInt(value, 1);
     if (name === "month") nextMonth = safeInt(value, 0);
-    if (name === "year") nextYear = Math.min(safeInt(value, year), 9999);
+    if (name === "year") nextYear = safeInt(value, Number.NaN); // allow blank & overflow
 
-    const max = calculateDaysInMonth(nextMonth, nextYear);
+    const max = calculateDaysInMonth(
+      nextMonth,
+      Number.isNaN(nextYear) ? 2000 : nextYear // safe fallback for days list
+    );
     if (nextDay > max) nextDay = max;
 
     setDay(nextDay);
@@ -67,14 +34,6 @@ export default function DatePicker({
 
     onChange(new Date(nextYear, nextMonth, nextDay));
   };
-
-  const alert = isInvalid ? (
-    <div role="alert" className="alert alert-error alert-outline">
-      <span>Error! Invalid date range</span>
-    </div>
-  ) : (
-    <></>
-  );
 
   return (
     <>
@@ -86,12 +45,18 @@ export default function DatePicker({
           value={day}
           onChange={(e) => handle(e.target)}
         >
-          {[...Array(calculateDaysInMonth(month, year))].map((_, i) => (
+          {[...Array(
+            calculateDaysInMonth(
+              month,
+              Number.isNaN(year) ? 2000 : year
+            )
+          )].map((_, i) => (
             <option value={i + 1} key={i}>
               {i + 1}
             </option>
           ))}
         </select>
+
         <select
           name="month"
           className="select"
@@ -105,16 +70,16 @@ export default function DatePicker({
             </option>
           ))}
         </select>
+
         <input
           name="year"
           className="input"
           type="number"
-          value={year}
+          value={Number.isNaN(year) ? "" : year}
           disabled={disabled}
           onChange={(e) => handle(e.target)}
         />
       </div>
-      {alert}
     </>
   );
 }

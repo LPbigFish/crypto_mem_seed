@@ -101,3 +101,39 @@ export function generate_monero_mnemonic(entropyHex: string): string {
 
   return [...words, checksumWord].join(" ");
 }
+
+export const MONTHS = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+
+export const calculateDaysInMonth = (month: number, year: number): number =>
+  new Date(year, month + 1, 0).getDate();
+
+export const safeInt = (str: string, fallback = Number.NaN) => {
+  const n = parseInt(str, 10);
+  return Number.isNaN(n) ? fallback : n;
+};
+
+export const isValidDate = (year: number, month: number, day: number): boolean => {
+  if (Number.isNaN(year) || Number.isNaN(month) || Number.isNaN(day)) return false;
+
+  return !(
+    year < 0 ||
+    year > 9999 ||
+    month < 0 ||
+    month > 11 ||
+    day < 1 ||
+    day > calculateDaysInMonth(month, year)
+  );
+};
