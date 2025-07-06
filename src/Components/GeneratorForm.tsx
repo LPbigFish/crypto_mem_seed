@@ -32,8 +32,6 @@ function GeneratorForm({ busy, doHash, form, setForm }: GeneratorFormProps) {
       setInvalid("none");
     }
 
-    console.log(reg, date);
-
     setValid(reg && date);
   }, [form]);
 
