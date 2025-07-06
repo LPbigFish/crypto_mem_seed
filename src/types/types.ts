@@ -32,3 +32,9 @@ export interface CryptoDropdownProps {
 
   onChange: React.Dispatch<React.SetStateAction<NETWORK_OPTION>>;
 }
+
+export interface CustomDatePickerProps {
+  disabled: boolean;
+  date: Date;
+  onChange: (date: Date) => void;
+}

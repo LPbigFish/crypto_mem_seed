@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { WalletModalProps } from "../types/types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCopy, faSquareCheck } from "@fortawesome/free-solid-svg-icons";
@@ -8,6 +8,8 @@ const handleCopy = async (text: string) => {
 };
 
 function TableRow({title, content}: { title: string, content: string | undefined }) {
+  const [animation, setAnimation] = useState<boolean>(false);
+
   if (content === "") {
     return <></>;
   }
@@ -18,10 +20,10 @@ function TableRow({title, content}: { title: string, content: string | undefined
       <td className="sticky -right-0.5 bg-base-100 h-full">
         <button
           type="button"
-          className="btn btn-square btn-ghost px-4 bg-base-100 z-20"
-          onClick={() => handleCopy(content || "")}
+          className={`btn btn-square btn-ghost px-4 transition z-20 ${ animation ? "bg-base-300" : "bg-base-100" }`}
+          onClick={() => { handleCopy(content || ""); setAnimation(true); setTimeout(() => { setAnimation(false); }, 500); }}
         >
-          <FontAwesomeIcon icon={faCopy} />
+          <FontAwesomeIcon className="delay-400" icon={animation ? faSquareCheck : faCopy} />
         </button>
       </td>
     </tr>

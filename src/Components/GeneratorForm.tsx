@@ -1,7 +1,7 @@
-import { DayPicker } from "react-day-picker";
 import type { GeneratorFormProps } from "../types/types";
 import { useContext } from "react";
 import { NetworkCtx } from "../utils/Contexts";
+import DatePicker from "./DatePicker";
 
 const regex = /^[A-Za-z]+(?:-[A-Za-z]+)? [A-Za-z]+(?:-[A-Za-z]+)?$/;
 
@@ -38,30 +38,7 @@ function GeneratorForm({ busy, doHash, form, setForm }: GeneratorFormProps) {
               }
             />
             <label className="label">Pick a date</label>
-            <button
-              type="button"
-              popoverTarget="rdp-popover"
-              disabled={busy}
-              className="input input-border md:input-lg w-full"
-              style={{ anchorName: "--rdp" } as React.CSSProperties}
-            >
-              {form.date ? form.date.toLocaleDateString() : "Pick a date"}
-            </button>
-            <div
-              popover="auto"
-              id="rdp-popover"
-              className="dropdown scale-125 top-8"
-              style={{ positionAnchor: "--rdp" } as React.CSSProperties}
-            >
-              <DayPicker
-                className="react-day-picker"
-                mode="single"
-                selected={form.date}
-                onSelect={(date) =>
-                  setForm((f) => ({ ...f, date: date || form.date }))
-                }
-              />
-            </div>
+            <DatePicker disabled={busy} date={form.date} onChange={(date: Date) => setForm((f) => ({ ...f, date: date || f.date }) )} />
             <button
               type="submit"
               disabled={busy || !isValid}

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 256 px square icon: wallet + “plus” coin (same viewBox so it scales crisply) -->
+<svg width="256" height="256" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <!-- wallet body -->
+  <rect x="8" y="22" width="48" height="28" rx="4" fill="#4B5563"/>
+  <!-- wallet flap -->
+  <rect x="8" y="16" width="48" height="10" rx="4" fill="#6B7280"/>
+  <!-- coin representing generated wallet -->
+  <circle cx="46" cy="36" r="10" fill="#FBBF24"/>
+  <!-- plus sign on coin -->
+  <rect x="45" y="31" width="2" height="10" fill="#FFFFFF"/>
+  <rect x="41" y="35" width="10" height="2" fill="#FFFFFF"/>
+</svg>
