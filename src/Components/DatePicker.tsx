@@ -65,7 +65,6 @@ export default function DatePicker({
     setMonth(nextMonth);
     setYear(nextYear);
 
-    console.log(nextDay, nextMonth, nextYear);
     onChange(new Date(nextYear, nextMonth, nextDay));
   };
 
