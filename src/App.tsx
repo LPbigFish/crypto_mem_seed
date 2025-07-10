@@ -4,6 +4,8 @@ import GeneratorForm from "./Components/GeneratorForm";
 import WalletModal from "./Components/WalletModal";
 import { NetworkCtx } from "./utils/Contexts";
 import { NETWORKS } from "./types/network_types";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 function App() {
   const workerRef = useRef<Worker>(null);
@@ -55,7 +57,7 @@ function App() {
 
   return (
     <>
-      <main className="min-h-screen max-w-screen flex flex-col bg-base-200">
+      <main className="min-h-screen max-w-screen flex flex-col bg-base-200 pt-4">
         <GeneratorForm
           busy={busy}
           doHash={doHash}
@@ -67,6 +69,9 @@ function App() {
         ) : (
           <></>
         )}
+        <a href="https://github.com/LPbigFish/" className="p-2 btn btn-ghost fixed bottom-4 left-1/2 -translate-x-1/2 -mr-2 sm:hidden">
+          <FontAwesomeIcon icon={faGithub} className="text-3xl" />
+        </a>
       </main>
     </>
   );
