@@ -64,10 +64,8 @@ function App() {
           form={form}
           setForm={setForm}
         />
-        {show ? (
+        {show && (
           <WalletModal wallet={wallet} onClose={() => setShow(false)} />
-        ) : (
-          <></>
         )}
         <a href="https://github.com/LPbigFish/" className="p-2 btn btn-ghost fixed bottom-4 left-1/2 -translate-x-1/2 -mr-2 sm:hidden">
           <FontAwesomeIcon icon={faGithub} className="text-3xl" />
