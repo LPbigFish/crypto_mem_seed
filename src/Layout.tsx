@@ -12,7 +12,7 @@ function Navbar({ children }: PageProps) {
 
   return (
     <>
-      <div className="navbar bg-base-100 shadow-md sticky z-50">
+      <div className="navbar bg-base-100 shadow-md fixed z-50">
         <div className="navbar-start">
           <img src={LOGO} alt="icon" className="h-12 sm:h-16 -mr-2" />
           <a className="text-xl mx-3 whitespace-nowrap">Wallet Generator</a>

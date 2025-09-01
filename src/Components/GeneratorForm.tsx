@@ -37,7 +37,7 @@ function GeneratorForm({ busy, doHash, form, setForm }: GeneratorFormProps) {
 
   return (
     <>
-      <div className="card lg:card-side shadow-2xl mx-auto mt-8 bg-base-100 rounded-4xl">
+      <div className="card lg:card-side shadow-2xl mx-auto mt-20 sm:mt-28 bg-base-100 rounded-4xl">
         <div className="card-body">
           <h2 className="ml-1 card-title">
             <img src={network.Icon} className="aspect-square w-6" />
@@ -59,6 +59,7 @@ function GeneratorForm({ busy, doHash, form, setForm }: GeneratorFormProps) {
               placeholder="Enter an adjective with a noun..."
               required
               pattern="\p{L}+(?:-\p{L}+)? \p{L}+(?:-\p{L}+)?"
+              autoComplete="off"
               value={form.passphrase}
               disabled={busy}
               onChange={(pass) =>
