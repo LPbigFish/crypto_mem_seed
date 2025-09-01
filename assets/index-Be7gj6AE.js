@@ -25124,7 +25124,7 @@ PROCEED WITH CAUTION!
       u
     ]), Pe.jsx(Pe.Fragment, {
       children: Pe.jsxs("div", {
-        className: "card lg:card-side shadow-2xl mx-auto mt-8 bg-base-100 rounded-4xl",
+        className: "card lg:card-side shadow-2xl mx-auto mt-20 sm:mt-28 bg-base-100 rounded-4xl",
         children: [
           Pe.jsxs("div", {
             className: "card-body",
@@ -25157,6 +25157,7 @@ PROCEED WITH CAUTION!
                     placeholder: "Enter an adjective with a noun...",
                     required: true,
                     pattern: "\\p{L}+(?:-\\p{L}+)? \\p{L}+(?:-\\p{L}+)?",
+                    autoComplete: "off",
                     value: u.passphrase,
                     disabled: r,
                     onChange: (m) => o((c) => ({
@@ -28621,7 +28622,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     return Pe.jsxs(Pe.Fragment, {
       children: [
         Pe.jsxs("div", {
-          className: "navbar bg-base-100 shadow-md sticky z-50",
+          className: "navbar bg-base-100 shadow-md fixed z-50",
           children: [
             Pe.jsxs("div", {
               className: "navbar-start",
