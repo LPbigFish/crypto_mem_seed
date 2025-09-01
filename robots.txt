@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lpbigfish.github.io/crypto_mem_seed/sitemap.xml

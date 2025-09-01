@@ -52,7 +52,7 @@
   function p3() {
     return eb || (eb = 1, Df.exports = h3()), Df.exports;
   }
-  var Ce = p3(), qf = {
+  var Pe = p3(), qf = {
     exports: {}
   };
   function m3(r) {
@@ -1098,7 +1098,7 @@
       var K = a & 134217727;
       return K !== 0 ? (a = K & ~g, a !== 0 ? l = se(a) : (U &= K, U !== 0 ? l = se(U) : n || (n = K & ~e, n !== 0 && (l = se(n))))) : (K = a & ~g, K !== 0 ? l = se(K) : U !== 0 ? l = se(U) : n || (n = a & ~e, n !== 0 && (l = se(n)))), l === 0 ? 0 : t !== 0 && t !== l && (t & g) === 0 && (g = l & -l, n = t & -t, g >= n || g === 32 && (n & 4194048) !== 0) ? t : l;
     }
-    function Pe(e, t) {
+    function Ce(e, t) {
       return (e.pendingLanes & ~(e.suspendedLanes & ~e.pingedLanes) & t) === 0;
     }
     function Le(e, t) {
@@ -6119,7 +6119,7 @@ Error generating stack: ` + n.message + `
     }
     function ey(e, t, n) {
       if ((yt & 6) !== 0) throw Error(o(327));
-      var a = !n && (t & 124) === 0 && (t & e.expiredLanes) === 0 || Pe(e, t), l = a ? SE(e, t) : pf(e, t, true), g = a;
+      var a = !n && (t & 124) === 0 && (t & e.expiredLanes) === 0 || Ce(e, t), l = a ? SE(e, t) : pf(e, t, true), g = a;
       do {
         if (l === 0) {
           Ui && !a && Qn(e, t, 0, false);
@@ -6241,7 +6241,7 @@ Error generating stack: ` + n.message + `
     }
     function Mi(e, t) {
       var n = e.timeoutHandle;
-      n !== -1 && (e.timeoutHandle = -1, ME(n)), n = e.cancelPendingCommit, n !== null && (e.cancelPendingCommit = null, n()), df(), kt = e, it = n = dn(e.current, null), lt = t, bt = 0, xr = null, Yn = false, Ui = Pe(e, t), af = false, Ci = Mr = of = Da = Xn = jt = 0, vr = Vo = null, uf = false, (t & 8) !== 0 && (t |= t & 32);
+      n !== -1 && (e.timeoutHandle = -1, ME(n)), n = e.cancelPendingCommit, n !== null && (e.cancelPendingCommit = null, n()), df(), kt = e, it = n = dn(e.current, null), lt = t, bt = 0, xr = null, Yn = false, Ui = Ce(e, t), af = false, Ci = Mr = of = Da = Xn = jt = 0, vr = Vo = null, uf = false, (t & 8) !== 0 && (t |= t & 32);
       var a = e.entangledLanes;
       if (a !== 0) for (e = e.entanglements, a &= t; 0 < a; ) {
         var l = 31 - D(a), g = 1 << l;
@@ -6307,7 +6307,7 @@ Error generating stack: ` + n.message + `
       var n = yt;
       yt |= 2;
       var a = ny(), l = ay();
-      kt !== e || lt !== t ? (zs = null, Is = Me() + 500, Mi(e, t)) : Ui = Pe(e, t);
+      kt !== e || lt !== t ? (zs = null, Is = Me() + 500, Mi(e, t)) : Ui = Ce(e, t);
       e: do
         try {
           if (bt !== 0 && it !== null) {
@@ -6666,7 +6666,7 @@ Error generating stack: ` + n.message + `
                 g = (1 << 31 - D(42 | e) + 1) - 1, g &= l & ~(U & ~K), g = g & 201326741 ? g & 201326741 | 1 : g ? g | 2 : 0;
               }
               g !== 0 && (n = true, vy(a, g));
-            } else g = lt, g = he(a, a === kt ? g : 0, a.cancelPendingCommit !== null || a.timeoutHandle !== -1), (g & 3) === 0 || Pe(a, g) || (n = true, vy(a, g));
+            } else g = lt, g = he(a, a === kt ? g : 0, a.cancelPendingCommit !== null || a.timeoutHandle !== -1), (g & 3) === 0 || Ce(a, g) || (n = true, vy(a, g));
             a = a.next;
           }
         while (n);
@@ -6692,7 +6692,7 @@ Error generating stack: ` + n.message + `
         ie === -1 ? ((K & n) === 0 || (K & a) !== 0) && (l[U] = Le(K, t)) : ie <= t && (e.expiredLanes |= K), g &= ~K;
       }
       if (t = kt, n = lt, n = he(e, e === t ? n : 0, e.cancelPendingCommit !== null || e.timeoutHandle !== -1), a = e.callbackNode, n === 0 || e === t && (bt === 2 || bt === 9) || e.cancelPendingCommit !== null) return a !== null && a !== null && ze(a), e.callbackNode = null, e.callbackPriority = 0;
-      if ((n & 3) === 0 || Pe(e, n)) {
+      if ((n & 3) === 0 || Ce(e, n)) {
         if (t = n & -n, t === e.callbackPriority) return t;
         switch (a !== null && ze(a), fo(n)) {
           case 2:
@@ -8978,13 +8978,13 @@ Error generating stack: ` + n.message + `
       if (Q >= se) return -1;
       if (w >= L) return 1;
       if (w >>>= 0, L >>>= 0, Q >>>= 0, se >>>= 0, this === y) return 0;
-      let he = se - Q, Pe = L - w;
-      const Le = Math.min(he, Pe), qe = this.slice(Q, se), We = y.slice(w, L);
+      let he = se - Q, Ce = L - w;
+      const Le = Math.min(he, Ce), qe = this.slice(Q, se), We = y.slice(w, L);
       for (let Qe = 0; Qe < Le; ++Qe) if (qe[Qe] !== We[Qe]) {
-        he = qe[Qe], Pe = We[Qe];
+        he = qe[Qe], Ce = We[Qe];
         break;
       }
-      return he < Pe ? -1 : Pe < he ? 1 : 0;
+      return he < Ce ? -1 : Ce < he ? 1 : 0;
     };
     function C(A, y, w, L, Q) {
       if (A.length === 0) return -1;
@@ -9000,10 +9000,10 @@ Error generating stack: ` + n.message + `
       throw new TypeError("val must be string, number or Buffer");
     }
     function P(A, y, w, L, Q) {
-      let se = 1, he = A.length, Pe = y.length;
+      let se = 1, he = A.length, Ce = y.length;
       if (L !== void 0 && (L = String(L).toLowerCase(), L === "ucs2" || L === "ucs-2" || L === "utf16le" || L === "utf-16le")) {
         if (A.length < 2 || y.length < 2) return -1;
-        se = 2, he /= 2, Pe /= 2, w /= 2;
+        se = 2, he /= 2, Ce /= 2, w /= 2;
       }
       function Le(We, Qe) {
         return se === 1 ? We[Qe] : We.readUInt16BE(Qe * se);
@@ -9012,11 +9012,11 @@ Error generating stack: ` + n.message + `
       if (Q) {
         let We = -1;
         for (qe = w; qe < he; qe++) if (Le(A, qe) === Le(y, We === -1 ? 0 : qe - We)) {
-          if (We === -1 && (We = qe), qe - We + 1 === Pe) return We * se;
+          if (We === -1 && (We = qe), qe - We + 1 === Ce) return We * se;
         } else We !== -1 && (qe -= qe - We), We = -1;
-      } else for (w + Pe > he && (w = he - Pe), qe = w; qe >= 0; qe--) {
+      } else for (w + Ce > he && (w = he - Ce), qe = w; qe >= 0; qe--) {
         let We = true;
-        for (let Qe = 0; Qe < Pe; Qe++) if (Le(A, qe + Qe) !== Le(y, Qe)) {
+        for (let Qe = 0; Qe < Ce; Qe++) if (Le(A, qe + Qe) !== Le(y, Qe)) {
           We = false;
           break;
         }
@@ -9039,9 +9039,9 @@ Error generating stack: ` + n.message + `
       L > se / 2 && (L = se / 2);
       let he;
       for (he = 0; he < L; ++he) {
-        const Pe = parseInt(y.substr(he * 2, 2), 16);
-        if (Ht(Pe)) return he;
-        A[w + he] = Pe;
+        const Ce = parseInt(y.substr(he * 2, 2), 16);
+        if (Ht(Ce)) return he;
+        A[w + he] = Ce;
       }
       return he;
     }
@@ -9102,10 +9102,10 @@ Error generating stack: ` + n.message + `
       let Q = y;
       for (; Q < w; ) {
         const se = A[Q];
-        let he = null, Pe = se > 239 ? 4 : se > 223 ? 3 : se > 191 ? 2 : 1;
-        if (Q + Pe <= w) {
+        let he = null, Ce = se > 239 ? 4 : se > 223 ? 3 : se > 191 ? 2 : 1;
+        if (Q + Ce <= w) {
           let Le, qe, We, Qe;
-          switch (Pe) {
+          switch (Ce) {
             case 1:
               se < 128 && (he = se);
               break;
@@ -9119,7 +9119,7 @@ Error generating stack: ` + n.message + `
               Le = A[Q + 1], qe = A[Q + 2], We = A[Q + 3], (Le & 192) === 128 && (qe & 192) === 128 && (We & 192) === 128 && (Qe = (se & 15) << 18 | (Le & 63) << 12 | (qe & 63) << 6 | We & 63, Qe > 65535 && Qe < 1114112 && (he = Qe));
           }
         }
-        he === null ? (he = 65533, Pe = 1) : he > 65535 && (he -= 65536, L.push(he >>> 10 & 1023 | 55296), he = 56320 | he & 1023), L.push(he), Q += Pe;
+        he === null ? (he = 65533, Ce = 1) : he > 65535 && (he -= 65536, L.push(he >>> 10 & 1023 | 55296), he = 56320 | he & 1023), L.push(he), Q += Ce;
       }
       return W(L);
     }
@@ -9250,16 +9250,16 @@ Error generating stack: ` + n.message + `
     }
     c.prototype.writeUintLE = c.prototype.writeUIntLE = function(y, w, L, Q) {
       if (y = +y, w = w >>> 0, L = L >>> 0, !Q) {
-        const Pe = Math.pow(2, 8 * L) - 1;
-        te(this, y, w, L, Pe, 0);
+        const Ce = Math.pow(2, 8 * L) - 1;
+        te(this, y, w, L, Ce, 0);
       }
       let se = 1, he = 0;
       for (this[w] = y & 255; ++he < L && (se *= 256); ) this[w + he] = y / se & 255;
       return w + L;
     }, c.prototype.writeUintBE = c.prototype.writeUIntBE = function(y, w, L, Q) {
       if (y = +y, w = w >>> 0, L = L >>> 0, !Q) {
-        const Pe = Math.pow(2, 8 * L) - 1;
-        te(this, y, w, L, Pe, 0);
+        const Ce = Math.pow(2, 8 * L) - 1;
+        te(this, y, w, L, Ce, 0);
       }
       let se = L - 1, he = 1;
       for (this[w + se] = y & 255; --se >= 0 && (he *= 256); ) this[w + se] = y / he & 255;
@@ -9298,16 +9298,16 @@ Error generating stack: ` + n.message + `
         const Le = Math.pow(2, 8 * L - 1);
         te(this, y, w, L, Le - 1, -Le);
       }
-      let se = 0, he = 1, Pe = 0;
-      for (this[w] = y & 255; ++se < L && (he *= 256); ) y < 0 && Pe === 0 && this[w + se - 1] !== 0 && (Pe = 1), this[w + se] = (y / he >> 0) - Pe & 255;
+      let se = 0, he = 1, Ce = 0;
+      for (this[w] = y & 255; ++se < L && (he *= 256); ) y < 0 && Ce === 0 && this[w + se - 1] !== 0 && (Ce = 1), this[w + se] = (y / he >> 0) - Ce & 255;
       return w + L;
     }, c.prototype.writeIntBE = function(y, w, L, Q) {
       if (y = +y, w = w >>> 0, !Q) {
         const Le = Math.pow(2, 8 * L - 1);
         te(this, y, w, L, Le - 1, -Le);
       }
-      let se = L - 1, he = 1, Pe = 0;
-      for (this[w + se] = y & 255; --se >= 0 && (he *= 256); ) y < 0 && Pe === 0 && this[w + se + 1] !== 0 && (Pe = 1), this[w + se] = (y / he >> 0) - Pe & 255;
+      let se = L - 1, he = 1, Ce = 0;
+      for (this[w + se] = y & 255; --se >= 0 && (he *= 256); ) y < 0 && Ce === 0 && this[w + se + 1] !== 0 && (Ce = 1), this[w + se] = (y / he >> 0) - Ce & 255;
       return w + L;
     }, c.prototype.writeInt8 = function(y, w, L) {
       return y = +y, w = w >>> 0, L || te(this, y, w, 1, 127, -128), y < 0 && (y = 255 + y + 1), this[w] = y & 255, w + 1;
@@ -9367,9 +9367,9 @@ Error generating stack: ` + n.message + `
       let se;
       if (typeof y == "number") for (se = w; se < L; ++se) this[se] = y;
       else {
-        const he = c.isBuffer(y) ? y : c.from(y, Q), Pe = he.length;
-        if (Pe === 0) throw new TypeError('The value "' + y + '" is invalid for argument "value"');
-        for (se = 0; se < L - w; ++se) this[se + w] = he[se % Pe];
+        const he = c.isBuffer(y) ? y : c.from(y, Q), Ce = he.length;
+        if (Ce === 0) throw new TypeError('The value "' + y + '" is invalid for argument "value"');
+        for (se = 0; se < L - w; ++se) this[se + w] = he[se % Ce];
       }
       return this;
     };
@@ -9419,8 +9419,8 @@ Error generating stack: ` + n.message + `
     function je(A, y, w, L, Q, se) {
       if (A > w || A < y) {
         const he = typeof y == "bigint" ? "n" : "";
-        let Pe;
-        throw y === 0 || y === BigInt(0) ? Pe = `>= 0${he} and < 2${he} ** ${(se + 1) * 8}${he}` : Pe = `>= -(2${he} ** ${(se + 1) * 8 - 1}${he}) and < 2 ** ${(se + 1) * 8 - 1}${he}`, new Y.ERR_OUT_OF_RANGE("value", Pe, A);
+        let Ce;
+        throw y === 0 || y === BigInt(0) ? Ce = `>= 0${he} and < 2${he} ** ${(se + 1) * 8}${he}` : Ce = `>= -(2${he} ** ${(se + 1) * 8 - 1}${he}) and < 2 ** ${(se + 1) * 8 - 1}${he}`, new Y.ERR_OUT_OF_RANGE("value", Ce, A);
       }
       ze(L, Q, se);
     }
@@ -12327,7 +12327,7 @@ Please pass a 2048 word array explicitly.`;
           throw Math.floor(V) !== V ? (Q(V, O), new D.ERR_OUT_OF_RANGE("offset", "an integer", V)) : x < 0 ? new D.ERR_BUFFER_OUT_OF_BOUNDS() : new D.ERR_OUT_OF_RANGE("offset", `>= 0 and <= ${x}`, V);
         }
         const he = /[^+/0-9A-Za-z-_]/g;
-        function Pe(V) {
+        function Ce(V) {
           if (V = V.split("=")[0], V = V.trim().replace(he, ""), V.length < 2) return "";
           for (; V.length % 4 !== 0; ) V = V + "=";
           return V;
@@ -12385,7 +12385,7 @@ Please pass a 2048 word array explicitly.`;
           return Ae;
         }
         function Qe(V) {
-          return k.toByteArray(Pe(V));
+          return k.toByteArray(Ce(V));
         }
         function st(V, x, O, Z) {
           let ce;
@@ -22438,12 +22438,12 @@ Please pass a 2048 word array explicitly.`;
         const { script: w, isP2SH: L, isP2WSH: Q, isSegwit: se } = re(D, A, this.__CACHE);
         if (!w) throw new Error(`No script found for input #${D}`);
         H(A);
-        const { finalScriptSig: he, finalScriptWitness: Pe } = y(D, A, w, se, L, Q);
+        const { finalScriptSig: he, finalScriptWitness: Ce } = y(D, A, w, se, L, Q);
         if (he && this.data.updateInput(D, {
           finalScriptSig: he
-        }), Pe && this.data.updateInput(D, {
-          finalScriptWitness: Pe
-        }), !he && !Pe) throw new Error(`Unknown error finalizing input #${D}`);
+        }), Ce && this.data.updateInput(D, {
+          finalScriptWitness: Ce
+        }), !he && !Ce) throw new Error(`Unknown error finalizing input #${D}`);
         return this.data.clearFinalizedInput(D), this;
       }
       _finalizeTaprootInput(D, A, y, w = c.tapScriptFinalizer) {
@@ -22498,15 +22498,15 @@ Please pass a 2048 word array explicitly.`;
         const Q = y ? L.filter((qe) => qe.pubkey.equals(y)) : L;
         if (Q.length < 1) throw new Error("No signatures for this pubkey");
         const se = [];
-        let he, Pe, Le;
+        let he, Ce, Le;
         for (const qe of Q) {
           const We = h.signature.decode(qe.signature), { hash: Qe, script: st } = Le !== We.hashType ? M(D, Object.assign({}, w, {
             sighashType: We.hashType
           }), this.__CACHE, true) : {
             hash: he,
-            script: Pe
+            script: Ce
           };
-          Le = We.hashType, he = Qe, Pe = st, C(qe.pubkey, st, "verify"), se.push(A(qe.pubkey, Qe, We.signature));
+          Le = We.hashType, he = Qe, Ce = st, C(qe.pubkey, st, "verify"), se.push(A(qe.pubkey, Qe, We.signature));
         }
         return se.every((qe) => qe === true);
       }
@@ -22518,19 +22518,19 @@ Please pass a 2048 word array explicitly.`;
         const se = y ? q(D, w, this.data.inputs, y, this.__CACHE) : ne(D, w, this.data.inputs, this.__CACHE);
         if (!se.length) throw new Error("No signatures for this pubkey");
         const he = se.find((Le) => !Le.leafHash);
-        let Pe = 0;
+        let Ce = 0;
         if (L && he) {
           if (!A(he.pubkey, he.hash, J(L))) return false;
-          Pe++;
+          Ce++;
         }
         if (Q) for (const Le of Q) {
           const qe = se.find((We) => Le.pubkey.equals(We.pubkey));
           if (qe) {
             if (!A(Le.pubkey, qe.hash, J(Le.signature))) return false;
-            Pe++;
+            Ce++;
           }
         }
-        return Pe > 0;
+        return Ce > 0;
       }
       signAllInputsHD(D, A = [
         m.Transaction.SIGHASH_ALL
@@ -22632,10 +22632,10 @@ Please pass a 2048 word array explicitly.`;
       _signTaprootInput(D, A, y, w, L = [
         m.Transaction.SIGHASH_DEFAULT
       ]) {
-        const Q = this.checkTaprootHashesForSig(D, A, y, w, L), se = Q.filter((Pe) => !Pe.leafHash).map((Pe) => (0, c.serializeTaprootSignature)(y.signSchnorr(Pe.hash), A.sighashType))[0], he = Q.filter((Pe) => !!Pe.leafHash).map((Pe) => ({
+        const Q = this.checkTaprootHashesForSig(D, A, y, w, L), se = Q.filter((Ce) => !Ce.leafHash).map((Ce) => (0, c.serializeTaprootSignature)(y.signSchnorr(Ce.hash), A.sighashType))[0], he = Q.filter((Ce) => !!Ce.leafHash).map((Ce) => ({
           pubkey: (0, c.toXOnly)(y.publicKey),
-          signature: (0, c.serializeTaprootSignature)(y.signSchnorr(Pe.hash), A.sighashType),
-          leafHash: Pe.leafHash
+          signature: (0, c.serializeTaprootSignature)(y.signSchnorr(Ce.hash), A.sighashType),
+          leafHash: Ce.leafHash
         }));
         return se && this.data.updateInput(D, {
           tapKeySig: se
@@ -22684,9 +22684,9 @@ Please pass a 2048 word array explicitly.`;
           }));
           se.push(Le);
         }
-        const Pe = Q.filter((Le) => !!Le.leafHash);
-        if (Pe.length) {
-          const Le = Pe.map((qe) => Promise.resolve(y.signSchnorr(qe.hash)).then((We) => ({
+        const Ce = Q.filter((Le) => !!Le.leafHash);
+        if (Ce.length) {
+          const Le = Ce.map((qe) => Promise.resolve(y.signSchnorr(qe.hash)).then((We) => ({
             tapScriptSig: [
               {
                 pubkey: (0, c.toXOnly)(y.publicKey),
@@ -22873,12 +22873,12 @@ Please pass a 2048 word array explicitly.`;
     }
     function ae(me, D, A, y, w, L) {
       let Q, se;
-      const he = X(me, D, A), Pe = L ? d.p2wsh({
+      const he = X(me, D, A), Ce = L ? d.p2wsh({
         redeem: he
       }) : null, Le = w ? d.p2sh({
-        redeem: Pe || he
+        redeem: Ce || he
       }) : null;
-      return y ? (Pe ? se = (0, v.witnessStackToScriptWitness)(Pe.witness) : se = (0, v.witnessStackToScriptWitness)(he.witness), Le && (Q = Le.input)) : Le ? Q = Le.input : Q = he.input, {
+      return y ? (Ce ? se = (0, v.witnessStackToScriptWitness)(Ce.witness) : se = (0, v.witnessStackToScriptWitness)(he.witness), Le && (Q = Le.input)) : Le ? Q = Le.input : Q = he.input, {
         finalScriptSig: Q,
         finalScriptWitness: se
       };
@@ -22901,25 +22901,25 @@ Please pass a 2048 word array explicitly.`;
         he = qe.outs[st];
       } else if (D.witnessUtxo) he = D.witnessUtxo;
       else throw new Error("Need a Utxo input item for signing");
-      const { meaningfulScript: Pe, type: Le } = Ot(he.script, me, "input", D.redeemScript, D.witnessScript);
+      const { meaningfulScript: Ce, type: Le } = Ot(he.script, me, "input", D.redeemScript, D.witnessScript);
       if ([
         "p2sh-p2wsh",
         "p2wsh"
-      ].indexOf(Le) >= 0) se = L.hashForWitnessV0(me, Pe, he.value, Q);
-      else if ((0, v.isP2WPKH)(Pe)) {
+      ].indexOf(Le) >= 0) se = L.hashForWitnessV0(me, Ce, he.value, Q);
+      else if ((0, v.isP2WPKH)(Ce)) {
         const qe = d.p2pkh({
-          hash: Pe.slice(2)
+          hash: Ce.slice(2)
         }).output;
         se = L.hashForWitnessV0(me, qe, he.value, Q);
       } else {
-        if (D.nonWitnessUtxo === void 0 && A.__UNSAFE_SIGN_NONSEGWIT === false) throw new Error(`Input #${me} has witnessUtxo but non-segwit script: ${Pe.toString("hex")}`);
+        if (D.nonWitnessUtxo === void 0 && A.__UNSAFE_SIGN_NONSEGWIT === false) throw new Error(`Input #${me} has witnessUtxo but non-segwit script: ${Ce.toString("hex")}`);
         !y && A.__UNSAFE_SIGN_NONSEGWIT !== false && console.warn(`Warning: Signing non-segwit inputs without the full parent transaction means there is a chance that a miner could feed you incorrect information to trick you into paying large fees. This behavior is the same as Psbt's predecessor (TransactionBuilder - now removed) when signing non-segwit scripts. You are not able to export this Psbt with toBuffer|toBase64|toHex since it is not BIP174 compliant.
 *********************
 PROCEED WITH CAUTION!
-*********************`), se = L.hashForSignature(me, Pe, Q);
+*********************`), se = L.hashForSignature(me, Ce, Q);
       }
       return {
-        script: Pe,
+        script: Ce,
         sighashType: Q,
         hash: se
       };
@@ -22946,7 +22946,7 @@ PROCEED WITH CAUTION!
     function q(me, D, A, y, w, L, Q) {
       const se = w.__TX, he = D.sighashType || m.Transaction.SIGHASH_DEFAULT;
       te(he, Q);
-      const Pe = A.map((st, Ft) => Ne(Ft, st, w)), Le = Pe.map((st) => st.script), qe = Pe.map((st) => st.value), We = [];
+      const Ce = A.map((st, Ft) => Ne(Ft, st, w)), Le = Ce.map((st) => st.script), qe = Ce.map((st) => st.value), We = [];
       if (D.tapInternalKey && !L) {
         const st = ve(me, D, w) || le.from([]);
         if ((0, c.toXOnly)(y).equals(st)) {
@@ -23103,14 +23103,14 @@ PROCEED WITH CAUTION!
     }
     function Ee(me, D, A, y) {
       let w = 0;
-      me.forEach((he, Pe) => {
-        if (y && he.finalScriptSig && (D.ins[Pe].script = he.finalScriptSig), y && he.finalScriptWitness && (D.ins[Pe].witness = Te(he.finalScriptWitness)), he.witnessUtxo) w += he.witnessUtxo.value;
+      me.forEach((he, Ce) => {
+        if (y && he.finalScriptSig && (D.ins[Ce].script = he.finalScriptSig), y && he.finalScriptWitness && (D.ins[Ce].witness = Te(he.finalScriptWitness)), he.witnessUtxo) w += he.witnessUtxo.value;
         else if (he.nonWitnessUtxo) {
-          const Le = ze(A, he, Pe), qe = D.ins[Pe].index, We = Le.outs[qe];
+          const Le = ze(A, he, Ce), qe = D.ins[Ce].index, We = Le.outs[qe];
           w += We.value;
         }
       });
-      const L = D.outs.reduce((he, Pe) => he + Pe.value, 0), Q = w - L;
+      const L = D.outs.reduce((he, Ce) => he + Ce.value, 0), Q = w - L;
       if (Q < 0) throw new Error("Outputs are spending more than Inputs");
       const se = D.virtualSize();
       A.__FEE = Q, A.__EXTRACTED_TX = D, A.__FEE_RATE = Math.floor(Q / se);
@@ -25074,11 +25074,11 @@ PROCEED WITH CAUTION!
       const I = mp(E, Number.isNaN(_) ? 2e3 : _);
       S > I && (S = I), p(S), d(E), h(_), u(new Date(_, E, S));
     };
-    return Ce.jsx(Ce.Fragment, {
-      children: Ce.jsxs("div", {
+    return Pe.jsx(Pe.Fragment, {
+      children: Pe.jsxs("div", {
         className: "fieldset grid-cols-3 bg-base-200",
         children: [
-          Ce.jsx("select", {
+          Pe.jsx("select", {
             name: "day",
             className: "select",
             disabled: r,
@@ -25086,23 +25086,23 @@ PROCEED WITH CAUTION!
             onChange: (c) => m(c.target),
             children: [
               ...Array(mp(s, Number.isNaN(f) ? 2e3 : f))
-            ].map((c, v) => Ce.jsx("option", {
+            ].map((c, v) => Pe.jsx("option", {
               value: v + 1,
               children: v + 1
             }, v))
           }),
-          Ce.jsx("select", {
+          Pe.jsx("select", {
             name: "month",
             className: "select",
             value: s,
             disabled: r,
             onChange: (c) => m(c.target),
-            children: Sx.map((c, v) => Ce.jsx("option", {
+            children: Sx.map((c, v) => Pe.jsx("option", {
               value: v,
               children: c
             }, v))
           }),
-          Ce.jsx("input", {
+          Pe.jsx("input", {
             name: "year",
             className: "input",
             type: "number",
@@ -25122,34 +25122,34 @@ PROCEED WITH CAUTION!
       h(c || m ? m ? c ? "none" : "date" : "reg" : "both"), d(m && c);
     }, [
       u
-    ]), Ce.jsx(Ce.Fragment, {
-      children: Ce.jsxs("div", {
+    ]), Pe.jsx(Pe.Fragment, {
+      children: Pe.jsxs("div", {
         className: "card lg:card-side shadow-2xl mx-auto mt-8 bg-base-100 rounded-4xl",
         children: [
-          Ce.jsxs("div", {
+          Pe.jsxs("div", {
             className: "card-body",
             children: [
-              Ce.jsxs("h2", {
+              Pe.jsxs("h2", {
                 className: "ml-1 card-title",
                 children: [
-                  Ce.jsx("img", {
+                  Pe.jsx("img", {
                     src: p.Icon,
                     className: "aspect-square w-6"
                   }),
                   "Generator"
                 ]
               }),
-              Ce.jsxs("form", {
+              Pe.jsxs("form", {
                 className: "fieldset p-2 min-w-2xs sm:min-w-md lg:min-w-xl space-y-1",
                 onSubmit: (m) => {
                   m.preventDefault(), i();
                 },
                 children: [
-                  Ce.jsx("label", {
+                  Pe.jsx("label", {
                     className: "label",
                     children: "Memo words"
                   }),
-                  Ce.jsx("input", {
+                  Pe.jsx("input", {
                     type: "text",
                     name: "text_input",
                     id: "textbox_1",
@@ -25164,11 +25164,11 @@ PROCEED WITH CAUTION!
                       passphrase: m.target.value
                     }))
                   }),
-                  Ce.jsx("label", {
+                  Pe.jsx("label", {
                     className: "label",
                     children: "Pick a date"
                   }),
-                  Ce.jsx(Ux, {
+                  Pe.jsx(Ux, {
                     disabled: r,
                     date: u.date,
                     onChange: (m) => o((c) => ({
@@ -25176,10 +25176,10 @@ PROCEED WITH CAUTION!
                       date: m || c.date
                     }))
                   }),
-                  Ce.jsx("div", {
+                  Pe.jsx("div", {
                     role: "alert",
                     className: `alert alert-error alert-outline ${f == "date" || f == "both" ? "" : "hidden"}`,
-                    children: Ce.jsxs("span", {
+                    children: Pe.jsxs("span", {
                       children: [
                         "Error! Invalid ",
                         " ",
@@ -25187,14 +25187,14 @@ PROCEED WITH CAUTION!
                       ]
                     })
                   }),
-                  Ce.jsxs("button", {
+                  Pe.jsxs("button", {
                     type: "submit",
                     disabled: r || !s,
                     className: `btn btn-lg px-1 mt-4 transition-all duration-300 ${r ? "btn-disabled" : "btn-primary"}`,
                     children: [
-                      r ? Ce.jsx("span", {
+                      r ? Pe.jsx("span", {
                         className: "loading loading-infinity loading-sm"
-                      }) : Ce.jsx(Ce.Fragment, {}),
+                      }) : Pe.jsx(Pe.Fragment, {}),
                       r ? "Hashing..." : "Generate " + p.label + " Wallet"
                     ]
                   })
@@ -25202,7 +25202,7 @@ PROCEED WITH CAUTION!
               })
             ]
           }),
-          Ce.jsx("div", {
+          Pe.jsx("div", {
             className: "max-w-2xl w-full"
           })
         ]
@@ -28391,21 +28391,21 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   };
   function pl({ title: r, content: i }) {
     const [u, o] = Ct.useState(false);
-    return i === "" ? Ce.jsx(Ce.Fragment, {}) : Ce.jsxs("tr", {
+    return i === "" ? Pe.jsx(Pe.Fragment, {}) : Pe.jsxs("tr", {
       children: [
-        Ce.jsxs("th", {
+        Pe.jsxs("th", {
           className: "sticky left-0 bg-base-100",
           children: [
             r,
             ": "
           ]
         }),
-        Ce.jsx("td", {
+        Pe.jsx("td", {
           children: i
         }),
-        Ce.jsx("td", {
+        Pe.jsx("td", {
           className: "sticky -right-0.5 bg-base-100 h-full",
-          children: Ce.jsx("button", {
+          children: Pe.jsx("button", {
             type: "button",
             className: `btn btn-square btn-ghost px-4 transition z-20 ${u ? "bg-base-300" : "bg-base-100"}`,
             onClick: () => {
@@ -28413,7 +28413,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                 o(false);
               }, 500);
             },
-            children: Ce.jsx(ii, {
+            children: Pe.jsx(ii, {
               className: "delay-400",
               icon: u ? nS : rk
             })
@@ -28427,18 +28427,18 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     return Ct.useEffect(() => {
       var _a2;
       return (_a2 = u.current) == null ? void 0 : _a2.showModal();
-    }, []), Ce.jsx(Ce.Fragment, {
-      children: Ce.jsx("dialog", {
+    }, []), Pe.jsx(Pe.Fragment, {
+      children: Pe.jsx("dialog", {
         ref: u,
         onClose: i,
         className: "modal w-screen bg-base-100",
-        children: Ce.jsxs("div", {
+        children: Pe.jsxs("div", {
           className: "modal-box p-8 max-w-xl",
           children: [
-            Ce.jsxs("h3", {
+            Pe.jsxs("h3", {
               className: "flex font-bold text-xl items-center gap-3",
               children: [
-                Ce.jsx(ii, {
+                Pe.jsx(ii, {
                   icon: nS,
                   className: "text-green-600 text-3xl"
                 }),
@@ -28446,27 +28446,27 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                 "Your Wallet Was Generated:"
               ]
             }),
-            Ce.jsx("div", {
+            Pe.jsx("div", {
               className: "flex flex-row",
-              children: Ce.jsx("div", {
+              children: Pe.jsx("div", {
                 className: "mt-4 overflow-x-auto",
-                children: Ce.jsx("table", {
+                children: Pe.jsx("table", {
                   className: "table",
-                  children: Ce.jsxs("tbody", {
+                  children: Pe.jsxs("tbody", {
                     children: [
-                      Ce.jsx(pl, {
+                      Pe.jsx(pl, {
                         title: "Mnemonic",
                         content: r == null ? void 0 : r.mnemonic
                       }),
-                      Ce.jsx(pl, {
+                      Pe.jsx(pl, {
                         title: "WIF",
                         content: r == null ? void 0 : r.wif
                       }),
-                      Ce.jsx(pl, {
+                      Pe.jsx(pl, {
                         title: "Address",
                         content: r == null ? void 0 : r.p2pkh
                       }),
-                      Ce.jsx(pl, {
+                      Pe.jsx(pl, {
                         title: "Witness Address",
                         content: r == null ? void 0 : r.p2wpkh
                       })
@@ -28475,11 +28475,11 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                 })
               })
             }),
-            Ce.jsx("div", {
+            Pe.jsx("div", {
               className: "modal-action",
-              children: Ce.jsx("form", {
+              children: Pe.jsx("form", {
                 method: "dialog",
-                children: Ce.jsx("button", {
+                children: Pe.jsx("button", {
                   className: "btn",
                   children: "Close"
                 })
@@ -28531,24 +28531,24 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
         i.value === Wi.xmr ? 256 : 128
       ]);
     };
-    return Ce.jsx(Ce.Fragment, {
-      children: Ce.jsxs("main", {
+    return Pe.jsx(Pe.Fragment, {
+      children: Pe.jsxs("main", {
         className: "min-h-screen max-w-screen flex flex-col bg-base-200 pt-4",
         children: [
-          Ce.jsx(Px, {
+          Pe.jsx(Px, {
             busy: u,
             doHash: v,
             form: p,
             setForm: s
           }),
-          h ? Ce.jsx(ak, {
+          h && Pe.jsx(ak, {
             wallet: c,
             onClose: () => m(false)
-          }) : Ce.jsx(Ce.Fragment, {}),
-          Ce.jsx("a", {
+          }),
+          Pe.jsx("a", {
             href: "https://github.com/LPbigFish/",
             className: "p-2 btn btn-ghost fixed bottom-4 left-1/2 -translate-x-1/2 -mr-2 sm:hidden",
-            children: Ce.jsx(ii, {
+            children: Pe.jsx(ii, {
               icon: aS,
               className: "text-3xl"
             })
@@ -28559,51 +28559,51 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   }
   function ok({ value: r, onChange: i }) {
     const u = Ct.useRef(null), o = Tu.find((p) => p.value === r.value) ?? Tu[0];
-    return Ce.jsx(Ce.Fragment, {
-      children: Ce.jsxs("div", {
+    return Pe.jsx(Pe.Fragment, {
+      children: Pe.jsxs("div", {
         className: "dropdown dropdown-bottom p-0 mx-3",
         children: [
-          Ce.jsxs("div", {
+          Pe.jsxs("div", {
             tabIndex: 0,
             role: "button",
             className: "btn justify-between md:w-46 normal-case",
             children: [
-              Ce.jsxs("span", {
+              Pe.jsxs("span", {
                 className: "flex items-center gap-2 text-lg font-normal",
                 children: [
-                  Ce.jsx("img", {
+                  Pe.jsx("img", {
                     src: o.Icon,
                     className: "aspect-square w-5"
                   }),
-                  Ce.jsx("span", {
+                  Pe.jsx("span", {
                     className: "not-sm:hidden",
                     children: o.label
                   })
                 ]
               }),
-              Ce.jsx(ii, {
+              Pe.jsx(ii, {
                 icon: tk,
                 className: "h-4 aspect-square"
               })
             ]
           }),
-          Ce.jsx("ul", {
+          Pe.jsx("ul", {
             tabIndex: 0,
             ref: u,
             className: "border border-base-300 dropdown-content menu -left-4 sm:menu-lg bg-base-100 rounded-box z-1 sm:w-46 p-2 shadow-md text-neutral",
-            children: Tu.map((p) => Ce.jsx("li", {
-              children: Ce.jsxs("a", {
+            children: Tu.map((p) => Pe.jsx("li", {
+              children: Pe.jsxs("a", {
                 onClick: () => {
                   var _a2;
                   i(p), (_a2 = u.current) == null ? void 0 : _a2.blur();
                 },
                 className: "flex items-center gap-2",
                 children: [
-                  Ce.jsx("img", {
+                  Pe.jsx("img", {
                     src: p.Icon,
                     className: "relative w-8 sm:w-5"
                   }),
-                  Ce.jsx("span", {
+                  Pe.jsx("span", {
                     className: "not-sm:hidden",
                     children: p.label
                   })
@@ -28618,43 +28618,43 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   const uk = "/crypto_mem_seed/assets/icon-3RDJV25-.svg";
   function sk({ children: r }) {
     const [i, u] = Ct.useState(Tu[0]);
-    return Ce.jsxs(Ce.Fragment, {
+    return Pe.jsxs(Pe.Fragment, {
       children: [
-        Ce.jsxs("div", {
+        Pe.jsxs("div", {
           className: "navbar bg-base-100 shadow-md sticky z-50",
           children: [
-            Ce.jsxs("div", {
+            Pe.jsxs("div", {
               className: "navbar-start",
               children: [
-                Ce.jsx("img", {
+                Pe.jsx("img", {
                   src: uk,
                   alt: "icon",
                   className: "h-12 sm:h-16 -mr-2"
                 }),
-                Ce.jsx("a", {
+                Pe.jsx("a", {
                   className: "text-xl mx-3 whitespace-nowrap",
                   children: "Wallet Generator"
                 })
               ]
             }),
-            Ce.jsx("div", {
+            Pe.jsx("div", {
               className: "not-xl:navbar-end xl:navbar-center flex",
-              children: Ce.jsx("ul", {
+              children: Pe.jsx("ul", {
                 className: "menu menu-horizontal px-1",
-                children: Ce.jsx("li", {
-                  children: Ce.jsx(ok, {
+                children: Pe.jsx("li", {
+                  children: Pe.jsx(ok, {
                     value: i,
                     onChange: u
                   })
                 })
               })
             }),
-            Ce.jsx("div", {
+            Pe.jsx("div", {
               className: "not-sm:hidden xl:navbar-end",
-              children: Ce.jsx("a", {
+              children: Pe.jsx("a", {
                 href: "https://github.com/LPbigFish/",
                 className: "mr-5 p-2 btn btn-ghost",
-                children: Ce.jsx(ii, {
+                children: Pe.jsx(ii, {
                   icon: aS,
                   className: "text-3xl"
                 })
@@ -28662,7 +28662,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             })
           ]
         }),
-        Ce.jsx(a0.Provider, {
+        Pe.jsx(a0.Provider, {
           value: i,
           children: r
         })
@@ -28670,9 +28670,9 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     });
   }
   window.Buffer = window.Buffer || C3;
-  T3.createRoot(document.getElementById("root")).render(Ce.jsx(Ct.StrictMode, {
-    children: Ce.jsx(sk, {
-      children: Ce.jsx(ik, {})
+  T3.createRoot(document.getElementById("root")).render(Pe.jsx(Ct.StrictMode, {
+    children: Pe.jsx(sk, {
+      children: Pe.jsx(ik, {})
     })
   }));
 })();
